@@ -1,3 +1,5 @@
+-- Create Table
+    
 CREATE TABLE metro_pulse.delhi_metro_trips (
     trip_id INT PRIMARY KEY,
     date DATETIME NOT NULL,
@@ -10,3 +12,8 @@ CREATE TABLE metro_pulse.delhi_metro_trips (
     ticket_type VARCHAR(50) NOT NULL,
     remarks VARCHAR(100) NOT NULL
 );
+
+-- Create Indexes for Faster Query Execution
+    
+CREATE INDEX idx_route ON delhi_metro_trips(from_station,to_station);
+CREATE INDEX idx_date ON delhi_metro_trips(date);
