@@ -1,16 +1,6 @@
 USE metro_pulse;
 
-SELECT from_station, to_station FROM delhi_metro_trips GROUP BY from_station, to_station;
-
-SELECT *
-FROM delhi_metro_trips
-WHERE from_station = 'Rajiv Chowk' 
-  AND to_station = 'Chandni Chowk';
-
 SELECT * FROM delhi_metro_trips;
-
-SELECT from_station, to_station, fare FROM delhi_metro_trips WHERE from_station = 'Rajiv Chowk' 
-  AND to_station = 'Chandni Chowk';
 
 -- Index for Route
 CREATE INDEX idx_route ON delhi_metro_trips(from_station,to_station);
@@ -37,12 +27,14 @@ SELECT from_station, COUNT(from_station) AS highest_trip_departures FROM delhi_m
 
 # 6. Which stations receive the highest number of passengers?
 SELECT to_station, SUM(passenger) AS highest_no_passenger FROM delhi_metro_trips GROUP BY to_station ORDER BY highest_no_passenger DESC;
- 
+
+
 -- Index for departures
 CREATE INDEX idx_from_station ON delhi_metro_trips(from_station);
 
 -- Index for arrivals
 CREATE INDEX idx_to_station ON delhi_metro_trips(to_station);
+
 
 # 7. What are the top 10 most frequently used metro stations?
 SELECT station, COUNT(*) AS count
@@ -55,7 +47,6 @@ FROM (
 ) AS combined
 GROUP BY station
 ORDER BY count DESC LIMIT 10;
-
 
 # 8. Which station pairs are most frequently used for travel?
 SELECT from_station, to_station, COUNT(*) AS travel_count FROM delhi_metro_trips GROUP BY from_station, to_station 
@@ -123,19 +114,6 @@ SELECT remarks, AVG(passenger) AS avg_passenger
 FROM delhi_metro_trips
 GROUP BY remarks
 ORDER BY avg_passenger DESC LIMIT 1;
-
-# Insights
-
-# Insights into passenger demand
-
-
-# revenue trends
-
-# travel behavior
-
-
-
-
 
 
 
