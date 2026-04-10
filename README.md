@@ -72,10 +72,12 @@ Clone the repository and install dependencies:
 -- Click Add file-->Create new file (requirements.txt)
 -->Commit changes
 
+### pip install pandas
 
 ⚙️ Requirements
-- Python 3.14.3
-- MySQL 8.0
+- Python
+- MySQL
+- Pandas
 - Dependencies listed in requirements.txt
 
 
