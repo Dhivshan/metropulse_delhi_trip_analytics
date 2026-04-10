@@ -1,3 +1,4 @@
 Python 3.14.3
-MySQL 8.0
+Pandas 25.3
 PyCharm 2025.3.2.1
+MySQL 8.0
