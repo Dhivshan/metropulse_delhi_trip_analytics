@@ -28,7 +28,7 @@ metropulse_delhi_trip_analytics/
 
 * Store the CSV format dataset in a structured SQL database by creating schemas file
 
-* Perform analytical queries using MYSQL
+* Perform analytical queries using MYSQL and identify insights under various scenerios
 
 * Analyze passenger travel behavior
 
